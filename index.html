@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Best Friend 🌸</title>
+    <!-- Google Fonts for Cute & Clean Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe3ec 100%);
+            color: #4a4a4a;
+            min-height: 100vh;
+            padding: 20px 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Mobile Container Max Width */
+        .container {
+            width: 100%;
+            max-width: 480px; /* Perfect for mobile display */
+            margin: 0 auto;
+        }
+
+        /* Cute Card Component */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+            border: 2px solid #ffffff;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Header Styling */
+        .header-card {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        /* Badge Pills */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-family: 'Fredoka', sans-serif;
+            color: #ff6b8b;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Shayari & Quotes Box */
+        .quote-box {
+            background: #fff0f3;
+            border-left: 4px solid #ff6b8b;
+            padding: 15px;
+            border-radius: 12px;
+            font-style: italic;
+            margin: 10px 0;
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Feature List (Why you're special) */
+        .trait-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .trait-item {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 16px;
+            border: 1px solid #ffe3ec;
+            font-size: 0.85rem;
+        }
+
+        .trait-item 🌸 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .trait-title {
+            font-weight: 700;
+            color: #ff6b8b;
+            margin-bottom: 3px;
+        }
+
+        /* Interactive Surprise Button */
+        .btn-surprise {
+            background: linear-gradient(135deg, #ff6b8b, #ff8e6b);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+
+        .btn-surprise:active {
+            transform: scale(0.96);
+        }
+
+        /* Hidden Note Styling */
+        #hiddenNote {
+            display: none;
+            margin-top: 15px;
+            animation: slideDown 0.5s ease-out forwards;
+        }
+
+        /* Image Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .photo-card {
+            width: 100%;
+            height: 130px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header Profile Card -->
+        <div class="card header-card">
+            <!-- Replace with her cute photo link or keep default -->
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Best Friend" class="avatar">
+            <h1>Hey Bestie! ✨</h1>
+            <p class="subtitle">A little corner of the internet made just for you!</p>
+            
+            <div class="badge-container">
+                <span class="badge">🤝 Safe Haven</span>
+                <span class="badge">🤍 Always Caring</span>
+                <span class="badge">⭐ 100% Support</span>
+            </div>
+        </div>
+
+        <!-- Heartfelt Shayari Section -->
+        <div class="card">
+            <h2>✨ Dil Se Shayari ✨</h2>
+            
+            <div class="quote-box">
+                "zindagi me ek aisi dost ka hona zaroori hai,<br>
+                jo bina kuch kahe sab samajh jaaye,<br>
+                har muskilein aasan ho jaati hain,<br>
+                jab tera jaisa yaar sath ho!" 🌸
+            </div>
+
+            <div class="quote-box">
+                "no matter how messy life gets, having a friend like you makes every conversation feel like home." ☕
+            </div>
+        </div>
+
+        <!-- Why You're Special Section -->
+        <div class="card">
+            <h2>🌸 Why You Mean So Much</h2>
+            <div class="trait-grid">
+                <div class="trait-item">
+                    <div style="font-size:1.2rem;">🤗</div>
+                    <div class="trait-title">Always Caring</div>
+                    <div>You check up on me and listen without judging.</div>
+                </div>
+                <div class="trait-item">
+                    <div style="font-size:1.2rem;">🛡️</div>
+                    <div class="trait-title">My Support System</div>
+                    <div>No matter the problem, we face it together.</div>
+                </div>
+                <div class="trait-item">
+                    <div style="font-size:1.2rem;">💬</div>
+                    <div class="trait-title">Endless Late Talks</div>
+                    <div>From big secrets to silly random drama!</div>
+                </div>
+                <div class="trait-item">
+                    <div style="font-size:1.2rem;">✨</div>
+                    <div class="trait-title">Pure Vibes</div>
+                    <div>Zero bad intentions, just genuine happiness.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cute Photo Memories Section -->
+        <div class="card">
+            <h2>📸 Cute Moments</h2>
+            <p style="font-size: 0.85rem; margin-bottom: 12px; color: #777;">(Replace these placeholder images with your actual photos together!)</p>
+            <div class="photo-gallery">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" class="photo-card" alt="Memory 1">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=80" class="photo-card" alt="Memory 2">
+            </div>
+        </div>
+
+        <!-- Interactive Surprise Section -->
+        <div class="card">
+            <h2>🎁 A Little Reminder</h2>
+            <p style="font-size: 0.9rem; margin-bottom: 15px; color: #666;">Tap the button below whenever you feel tired or down!</p>
+            
+            <button class="btn-surprise" onclick="toggleSurprise()">Click For A Hug! 🤗</button>
+            
+            <div id="hiddenNote" class="quote-box">
+                💖 <strong>Hey Buddy, Remember:</strong><br>
+                Thank you for being in my life. You are truly rare, kind, and precious. Never forget how amazing you are! I'll always have your back! 🚀
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Made with 🤍 for my best friend | 2026
+        </div>
+
+    </div>
+
+    <!-- Simple JavaScript for Interactive Button -->
+    <script>
+        function toggleSurprise() {
+            var note = document.getElementById("hiddenNote");
+            if (note.style.display === "none" || note.style.display === "") {
+                note.style.display = "block";
+            } else {
+                note.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
