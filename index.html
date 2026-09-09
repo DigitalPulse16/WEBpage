@@ -172,13 +172,13 @@
         /* Image Gallery */
         .photo-gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
         }
 
         .photo-card {
             width: 100%;
-            height: 130px;
+            height: 145px;
             border-radius: 16px;
             object-fit: cover;
             border: 2px solid #fff;
@@ -212,8 +212,7 @@
 
         <!-- Header Profile Card -->
         <div class="card header-card">
-            <!-- Replace with her cute photo link or keep default -->
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Best Friend" class="avatar">
+            <img src="IMG_3846.JPG" alt="Best Friend" class="avatar">
             <h1>Hey Bestie! ✨</h1>
             <p class="subtitle">A little corner of the internet made just for you!</p>
             
@@ -270,10 +269,10 @@
         <!-- Cute Photo Memories Section -->
         <div class="card">
             <h2>📸 Cute Moments</h2>
-            <p style="font-size: 0.85rem; margin-bottom: 12px; color: #777;">(Replace these placeholder images with your actual photos together!)</p>
             <div class="photo-gallery">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" class="photo-card" alt="Memory 1">
-                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=80" class="photo-card" alt="Memory 2">
+                <img src="IMG_3840.JPG" class="photo-card" alt="Memory 1">
+                <img src="IMG_3846.JPG" class="photo-card" alt="Memory 2">
+                <img src="IMG_4107.JPG" class="photo-card" alt="Memory 3">
             </div>
         </div>
 
@@ -282,7 +281,7 @@
             <h2>🎁 A Little Reminder</h2>
             <p style="font-size: 0.9rem; margin-bottom: 15px; color: #666;">Tap the button below whenever you feel tired or down!</p>
             
-            <button class="btn-surprise" onclick="toggleSurprise()">Click For A Hug! 🤗</button>
+            <button class="btn-surprise" onclick="toggleSurprise()">Click For A joy! 🤗</button>
             
             <div id="hiddenNote" class="quote-box">
                 💖 <strong>Hey Buddy, Remember:</strong><br>
