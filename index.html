@@ -3,206 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To My Best Friend 🌸</title>
-    <!-- Google Fonts for Cute & Clean Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>To My Best Friend | A Little Corner For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Global Styles */
+        :root {
+            --ink: #302b32;
+            --muted: #766d73;
+            --coral: #d95f65;
+            --rose: #f5d6d2;
+            --cream: #fffaf5;
+            --line: rgba(48, 43, 50, 0.1);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #fff5f7 0%, #ffe3ec 100%);
-            color: #4a4a4a;
+            font-family: 'DM Sans', sans-serif;
+            background: #f4eee9;
+            color: var(--ink);
             min-height: 100vh;
-            padding: 20px 15px;
-            display: flex;
-            justify-content: center;
+            overflow-x: hidden;
         }
 
-        /* Mobile Container Max Width */
         .container {
             width: 100%;
-            max-width: 480px; /* Perfect for mobile display */
+            max-width: 1180px;
             margin: 0 auto;
+            padding: 28px 28px 36px;
         }
 
-        /* Cute Card Component */
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 25px 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
-            border: 2px solid #ffffff;
-            text-align: center;
-            animation: fadeIn 0.8s ease-in-out;
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: .76rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
         }
 
-        /* Header Styling */
-        .header-card {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
-            color: white;
-            padding: 30px 20px;
+        .topline span:last-child { color: var(--coral); }
+
+        .hero {
+            min-height: 535px;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 42px;
+            align-items: center;
+            padding: clamp(30px, 6vw, 78px);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background: var(--coral);
+            box-shadow: 0 20px 55px rgba(96, 56, 53, .16);
+            animation: rise .8s ease both;
         }
 
-        .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        .hero::before {
+            content: '✳';
+            position: absolute;
+            right: 43%;
+            top: 12%;
+            color: rgba(255, 255, 255, .13);
+            font-size: 13rem;
+            line-height: 1;
+            transform: rotate(17deg);
         }
+
+        .hero-copy, .hero-visual { position: relative; z-index: 1; }
+
+        .eyebrow {
+            color: #ffd8d4;
+            font-size: .75rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        h1, h2, .script { font-family: 'Playfair Display', serif; }
 
         h1 {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            max-width: 540px;
+            color: #fff9f5;
+            font-size: clamp(3rem, 7vw, 6.4rem);
+            line-height: .94;
+            letter-spacing: -.045em;
+            margin-bottom: 24px;
         }
 
         .subtitle {
-            font-size: 0.95rem;
-            opacity: 0.95;
-            font-weight: 600;
+            max-width: 390px;
+            color: #fff0ed;
+            font-size: 1.05rem;
+            line-height: 1.65;
         }
 
-        /* Badge Pills */
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-top: 15px;
+        .hero-visual {
+            min-height: 360px;
+            display: grid;
+            place-items: center;
         }
+
+        .hero-photo {
+            width: min(100%, 310px);
+            aspect-ratio: .78;
+            object-fit: cover;
+            border: 10px solid #fff9f5;
+            box-shadow: 18px 22px 0 rgba(78, 43, 44, .2);
+            transform: rotate(5deg);
+        }
+
+        .sticker {
+            position: absolute;
+            bottom: 10px;
+            left: 8%;
+            padding: 13px 17px;
+            background: #f8cfc9;
+            color: #6c3e40;
+            font-size: .8rem;
+            font-weight: 700;
+            transform: rotate(-8deg);
+            box-shadow: 5px 8px 0 rgba(78, 43, 44, .14);
+        }
+
+        .badge-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
 
         .badge {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            color: #fff9f5;
+            border: 1px solid rgba(255,255,255,.38);
+            padding: 8px 12px;
+            border-radius: 99px;
+            font-size: .76rem;
             font-weight: 700;
         }
 
-        /* Section Titles */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .card {
+            background: var(--cream);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: clamp(24px, 4vw, 42px);
+            box-shadow: 0 12px 35px rgba(86, 62, 52, .06);
+            animation: rise .8s ease both;
+        }
+
+        .wide { grid-column: 1 / -1; }
+
         h2 {
-            font-family: 'Fredoka', sans-serif;
-            color: #ff6b8b;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            color: var(--ink);
+            font-size: clamp(1.65rem, 3vw, 2.3rem);
+            line-height: 1.1;
+            margin-bottom: 22px;
         }
 
-        /* Shayari & Quotes Box */
+        .section-label {
+            color: var(--coral);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
         .quote-box {
-            background: #fff0f3;
-            border-left: 4px solid #ff6b8b;
-            padding: 15px;
-            border-radius: 12px;
-            font-style: italic;
-            margin: 10px 0;
-            color: #555;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            background: #f7e4df;
+            border-left: 3px solid var(--coral);
+            padding: 18px 20px;
+            margin: 12px 0;
+            color: #5f5153;
+            line-height: 1.75;
+            font-size: .96rem;
         }
 
-        /* Feature List (Why you're special) */
+        .quote-box:first-letter { color: var(--coral); }
+
         .trait-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            text-align: left;
-        }
-
-        .trait-item {
-            background: #ffffff;
-            padding: 12px;
-            border-radius: 16px;
-            border: 1px solid #ffe3ec;
-            font-size: 0.85rem;
-        }
-
-        .trait-item-emoji {
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-
-        .trait-title {
-            font-weight: 700;
-            color: #ff6b8b;
-            margin-bottom: 3px;
-        }
-
-        /* Interactive Surprise Button */
-        .btn-surprise {
-            background: linear-gradient(135deg, #ff6b8b, #ff8e6b);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-family: 'Fredoka', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            width: 100%;
-        }
-
-        .btn-surprise:active {
-            transform: scale(0.96);
-        }
-
-        /* Hidden Note Styling */
-        #hiddenNote {
-            display: none;
-            margin-top: 15px;
-            animation: slideDown 0.5s ease-out forwards;
-        }
-
-        /* Image Gallery */
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
         }
 
+        .trait-item {
+            min-height: 148px;
+            padding: 17px;
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 5px;
+            font-size: .84rem;
+            line-height: 1.5;
+        }
+
+        .trait-icon { font-size: 1.35rem; margin-bottom: 12px; }
+
+        .trait-title { color: var(--coral); font-weight: 700; margin-bottom: 5px; }
+
+        .photo-gallery { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 12px; }
+
         .photo-card {
             width: 100%;
-            height: 145px;
-            border-radius: 16px;
+            height: 230px;
+            border-radius: 4px;
             object-fit: cover;
-            border: 2px solid #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            filter: saturate(.86);
+            transition: transform .35s ease, filter .35s ease;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #aaa;
-            margin-top: 10px;
-            margin-bottom: 20px;
+        .photo-card:first-child { height: 280px; }
+        .photo-card:hover { transform: translateY(-6px) rotate(1deg); filter: saturate(1.08); }
+
+        .memory-caption { color: var(--muted); font-size: .76rem; margin-top: 14px; }
+
+        .reminder-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+        .reminder-card p { color: var(--muted); font-size: .92rem; line-height: 1.6; }
+
+        .btn-surprise {
+            background: var(--ink);
+            color: #fff9f5;
+            border: none;
+            padding: 15px 24px;
+            border-radius: 3px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background .2s ease, transform .2s ease;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+        .btn-surprise:hover { background: var(--coral); transform: translateY(-2px); }
+        .btn-surprise:active { transform: translateY(0); }
+
+        #hiddenNote { display: none; grid-column: 1 / -1; margin: 0; animation: slideDown .45s ease both; }
+
+        .footer { text-align: center; color: var(--muted); font-size: .75rem; letter-spacing: .05em; margin: 26px 0 4px; }
+
+        @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 760px) {
+            .container { padding: 18px 14px 28px; }
+            .topline { margin-bottom: 16px; }
+            .hero { grid-template-columns: 1fr; gap: 20px; min-height: auto; padding: 38px 28px 30px; }
+            .hero-visual { min-height: 270px; }
+            .hero-photo { width: 220px; }
+            .sticker { left: 12%; bottom: 3px; }
+            .content-grid { grid-template-columns: 1fr; }
+            .wide { grid-column: auto; }
+            .reminder-card { grid-template-columns: 1fr; }
+            .btn-surprise { width: 100%; }
         }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @media (max-width: 430px) {
+            h1 { font-size: 3.6rem; }
+            .trait-grid, .photo-gallery { grid-template-columns: 1fr 1fr; }
+            .photo-card, .photo-card:first-child { height: 150px; }
+            .photo-card:first-child { grid-column: 1 / -1; height: 220px; }
         }
     </style>
 </head>
@@ -210,22 +281,33 @@
 
     <div class="container">
 
-        <!-- Header Profile Card -->
-        <div class="card header-card">
-            <img src="./IMG_3846.JPG" alt="Best Friend" class="avatar">
-            <h1>Hey Bestie! ✨</h1>
-            <p class="subtitle">A little corner of the internet made just for you!</p>
+        <div class="topline">
+            <span>Private little archive</span>
+            <span>Made with love · 2026</span>
+        </div>
+
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">To my best friend</p>
+                <h1>Hey<br>Bestie! ✨</h1>
+                <p class="subtitle">A little corner of the internet made just for you, because some people deserve their own beautiful place.</p>
             
             <div class="badge-container">
                 <span class="badge">🤝 Safe Haven</span>
                 <span class="badge">🤍 Always Caring</span>
                 <span class="badge">⭐ 100% Support</span>
             </div>
-        </div>
+            </div>
+            <div class="hero-visual">
+                <img src="./IMG_3846.JPG" alt="Best Friend" class="hero-photo">
+                <span class="sticker">always on your side ♡</span>
+            </div>
+        </header>
 
-        <!-- Heartfelt Shayari Section -->
-        <div class="card">
-            <h2>✨ Dil Se Shayari ✨</h2>
+        <main class="content-grid">
+        <section class="card">
+            <p class="section-label">A few words from the heart</p>
+            <h2>✨ Dil Se Shayari</h2>
             
             <div class="quote-box">
                 "zindagi me ek aisi dost ka hona zaroori hai,<br>
@@ -237,57 +319,61 @@
             <div class="quote-box">
                 "no matter how messy life gets, having a friend like you makes every conversation feel like home." ☕
             </div>
-        </div>
+        </section>
 
-        <!-- Why You're Special Section -->
-        <div class="card">
+        <section class="card">
+            <p class="section-label">The little things</p>
             <h2>🌸 Why You Mean So Much</h2>
             <div class="trait-grid">
                 <div class="trait-item">
-                    <div class="trait-item-emoji">🤗</div>
+                    <div class="trait-icon">🤗</div>
                     <div class="trait-title">Always Caring</div>
                     <div>You check up on me and listen without judging.</div>
                 </div>
                 <div class="trait-item">
-                    <div class="trait-item-emoji">🛡️</div>
+                    <div class="trait-icon">🛡️</div>
                     <div class="trait-title">My Support System</div>
                     <div>No matter the problem, we face it together.</div>
                 </div>
                 <div class="trait-item">
-                    <div class="trait-item-emoji">💬</div>
+                    <div class="trait-icon">💬</div>
                     <div class="trait-title">Endless Late Talks</div>
                     <div>From big secrets to silly random drama!</div>
                 </div>
                 <div class="trait-item">
-                    <div class="trait-item-emoji">✨</div>
+                    <div class="trait-icon">✨</div>
                     <div class="trait-title">Pure Vibes</div>
                     <div>Zero bad intentions, just genuine happiness.</div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Cute Photo Memories Section -->
-        <div class="card">
+        <section class="card wide">
+            <p class="section-label">Snapshots worth keeping</p>
             <h2>📸 Cute Moments</h2>
             <div class="photo-gallery">
                 <img src="./IMG_3840.JPG" class="photo-card" alt="Memory 1">
                 <img src="./IMG_3846.JPG" class="photo-card" alt="Memory 2">
                 <img src="./IMG_4107.JPG" class="photo-card" alt="Memory 3">
             </div>
-        </div>
+            <p class="memory-caption">Three frames, one very special friendship.</p>
+        </section>
 
-        <!-- Interactive Surprise Section -->
-        <div class="card">
-            <h2>🎁 A Little Reminder</h2>
-            <p style="font-size: 0.9rem; margin-bottom: 15px; color: #666;">Tap the button below whenever you feel tired or down!</p>
+        <section class="card wide reminder-card">
+            <div>
+                <p class="section-label">Keep this close</p>
+                <h2>🎁 A Little Reminder</h2>
+                <p>Tap the button whenever you feel tired or down. This one is for the days that need a little extra light.</p>
+            </div>
             
-            <button class="btn-surprise" onclick="toggleSurprise()">Click For A joy! 🤗</button>
+            <button class="btn-surprise" onclick="toggleSurprise()" aria-expanded="false">Click For A Joy! 🤗</button>
             
             <div id="hiddenNote" class="quote-box">
                 💖 <strong>Hey Buddy, Remember:</strong><br>
                 Thank you for being in my life. You are truly rare, kind, and precious. Never forget how amazing you are! I'll always have your back! 🚀
             </div>
-        </div>
+        </section>
+        </main>
 
         <!-- Footer -->
         <div class="footer">
@@ -300,10 +386,13 @@
     <script>
         function toggleSurprise() {
             var note = document.getElementById("hiddenNote");
+            var button = document.querySelector(".btn-surprise");
             if (note.style.display === "none" || note.style.display === "") {
                 note.style.display = "block";
+                button.setAttribute("aria-expanded", "true");
             } else {
                 note.style.display = "none";
+                button.setAttribute("aria-expanded", "false");
             }
         }
     </script>
